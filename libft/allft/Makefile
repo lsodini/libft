@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lsodini <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: lsodini <lsodini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/24 15:58:08 by lsodini           #+#    #+#              #
-#    Updated: 2024/01/24 17:38:37 by lsodini          ###   ########.fr        #
+#    Updated: 2024/01/24 18:09:59 by lsodini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRC =	ft_atoi.c \
 	ft_substr.c \
 	ft_strtrim.c \
 	ft_toupper.c \
-	ft_tolower.c \
+	ft_tolower.c
+
 BSRC =	ft_lstnew.c \
 	ft_lstlast.c \
 	ft_lstsize.c \
@@ -53,21 +54,33 @@ BSRC =	ft_lstnew.c \
 	ft_lstdelone.c \
 	ft_lstiter.c \
 	ft_lstclear.c \
-	ft_lstmap.c \
+	ft_lstmap.c
+
 OBJECTS = $(SRC:.c=.o)
+
 BOBJECTS = $(BSRC:.c=.o)
+
 CC = gcc
+
 CFLAGS = -Wall -Wextra -Werror
+
+all: $(NAME)
+
 $(NAME): $(OBJECTS)  
 	ar -crs $@ $?
+
 bonus: $(OBJECTS) $(BOBJECTS)
 	ar -crs $(NAME) $?
+
 %.o: %.c
-	$(CC) -c $(CFLAGS) $?
-all: $(NAME)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	rm -rf $(OBJECTS) $(BOBJECTS)
+
 fclean: clean
 	rm -rf $(NAME)
+
 re: fclean all bonus
+
 .PHONY: all bonus clean fclean re
