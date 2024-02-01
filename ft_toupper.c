@@ -17,3 +17,13 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
+/* int main()
+{
+    char lowercase = 'a';
+    char uppercase = ft_toupper(lowercase);
+
+    printf("Lowercase: %c\n", lowercase);
+    printf("Uppercase: %c\n", uppercase);
+
+    return 0;
+} */

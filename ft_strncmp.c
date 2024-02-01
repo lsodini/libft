@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
 	unsigned char	*s1_cpy;
@@ -33,3 +33,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		return (0);
 	}
 }
+/* int main()
+{
+	char *s1 = "ciao mi";
+	char *s2 = "ciao mi chiamo";
+	unsigned int n = 1;
+	printf("%d\n", ft_strncmp(s1, s2, n));
+	return 0;
+} */

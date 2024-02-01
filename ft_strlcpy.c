@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	x;
@@ -24,9 +24,22 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		return (x);
 	while (src[i] != '\0' && i < size - 1)
 	{
-		dest[i] = src [i];
+		dst[i] = src [i];
 		i++;
 	}
-	dest[i] = '\0';
+	dst[i] = '\0';
 	return (x);
 }
+/* int main()
+{
+	char destination[20];
+	char source[] = "Hello, World!";
+	unsigned int size = sizeof(destination);
+
+	unsigned int result = ft_strlcpy(destination, source, size);
+
+	printf("Result: %u\n", result);
+	printf("Copied String: %s\n", destination);
+
+	return 0;
+} */

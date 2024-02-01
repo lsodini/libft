@@ -36,13 +36,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i + j] = '\0';
 	return (str);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
-	char const s1[] = "ciao so";
-	char const s2[] = "no luca";
-	printf("%s\n", ft_strjoin(s1, s2));
-	return(0);
+    char const s1[] = "ciao so";
+    char const s2[] = "no luca";
+    char *result = ft_strjoin(s1, s2);
+
+    if (result) {
+        printf("%s\n", result);
+        free(result);  // Deallocazione della memoria
+    } else {
+        fprintf(stderr, "Errore durante l'allocazione di memoria.\n");
+        return 1;
+    }
+
+    return 0;
 }*/

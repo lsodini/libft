@@ -40,5 +40,5 @@ int main()
 	char const s[]= "abcd";
 	char *str = ft_strmapi(s, my_toupper);
 	printf("%s\n", str);
-	
+	free(str);
 }*/

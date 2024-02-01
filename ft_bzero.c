@@ -19,3 +19,12 @@ void	ft_bzero(void *s, size_t n)
 	while (n-- > 0)
 		*p++ = 0;
 }
+/*int main()
+{
+	char s[] = "ciao";
+	size_t n = 1;
+	printf("Prima di bzero: %s\n", s);
+	ft_bzero(s, n);
+	printf("Dopo bzero: %s\n", s);
+	return 0;
+}*/

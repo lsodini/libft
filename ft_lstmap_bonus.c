@@ -38,37 +38,34 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (newlist);
 }
-/*#include <stdio.h>
-
-void *modifica_contenuto(void *valore_nodo)
+/*void	*ft_mappa_function(void *content)
 {
-    int *valore = (int *)valore_nodo;
-    *valore += 100;
-    return valore_nodo;
+	char	*original = (char *)content;
+	char	*duplicate = ft_strdup(original);
+	return ((void *)duplicate);
 }
-void del(void *nodo)
+void	ft_deal(void *content)
 {
-	free(nodo);
+	free(content);
 }
-
 int main()
 {
-	t_list *head;
-	t_list *nodo;
-	t_list *newhead;
-	int x = 10;
-	int y = 20;
-	
-	head = ft_lstnew(&x);
-	nodo = ft_lstnew(&y);
-	ft_lstadd_back(&head, nodo);
-	newhead = ft_lstmap(head, modifica_contenuto, del);
-
-	while(newhead)
+// Crea una nuova lista basata sull'originale e la dealloca
+	char	*str = (char *)malloc(sizeof(char) * 2);
+	if (!str)
+		return (1);
+	str[0] = 'a';
+	str[1] = '\0';
+	t_list	*nodo = ft_lstnew(str);
+	if (!nodo)
 	{
-	 int *valore = (int *)newhead->content;
-        printf("%d\n", *valore);
-        newhead = newhead->next;
+		free(str);
+		return (1);
 	}
+	t_list	*map = ft_lstmap(nodo, &ft_mappa_function, ft_deal);
+	printf("%s\n", (char *)nodo->content);
+	printf("%s\n", (char *)map->content);
+	ft_lstclear(&map, &ft_deal);
+	ft_lstclear(&nodo, &ft_deal);
 	return (0);
 }*/

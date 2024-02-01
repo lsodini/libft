@@ -11,32 +11,40 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		i;
-	char	*duplica;
+	char	*dup;
 
 	i = 0;
 	while (src[i])
 		i++;
-	duplica = malloc(sizeof(char) * i + 1);
-	if (!duplica)
+	dup = malloc(sizeof(char) * i + 1);
+	if (!dup)
 		return (NULL);
 	i = 0;
 	while (src[i])
 	{
-		duplica[i] = src[i];
+		dup[i] = src[i];
 		i++;
 	}
-	duplica[i] = '\0';
-	return (duplica);
+	dup[i] = '\0';
+	return (dup);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
-	char src[] = "ciao sono luca";
-	printf("%s\n", ft_strdup(src));
-	return(0);
+    char src[] = "ciao sono luca";
+    char *duplicated_string = ft_strdup(src);
+
+    if (duplicated_string) {
+        printf("%s\n", duplicated_string);
+        free(duplicated_string);  // Deallocazione della memoria
+    } else {
+        fprintf(stderr, "Errore durante l'allocazione di memoria.\n");
+        return 1;
+    }
+
+    return 0;
 }*/

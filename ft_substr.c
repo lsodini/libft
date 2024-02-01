@@ -37,14 +37,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {
 	const char s[] = "ciao sono luca";
 	unsigned int start = 3;
 	size_t len = 11;
-	printf("%s\n", ft_substr(s, start, len));
+	char *result = ft_substr(s, start, len);
+	printf("%s\n", result);
+	free(result);
 	return (0);
 }*/

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
 {
 	size_t	i;
 	size_t	j;
@@ -37,3 +37,16 @@ unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
 	dst[j] = '\0';
 	return (dlen + slen);
 }
+/* int main()
+{
+	char dest[20] = "Hello, ";
+	char source[] = "World!";
+	unsigned int size = sizeof(dest);
+
+	unsigned int result = ft_strlcat(dest, source, size);
+
+	printf("Result: %u\n", result);
+	printf("Concatenated String: %s\n", dest);
+
+	return 0;
+} */

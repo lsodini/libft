@@ -19,18 +19,15 @@ t_list	*ft_lstnew(void *content)
 	content_len = (t_list *)malloc(sizeof(t_list) * 1);
 	if (!content_len)
 		return (NULL);
-	content_len -> content = content;
-	content_len -> next = NULL;
+	content_len->content = content;
+	content_len->next = NULL;
 	return (content_len);
 }
-/*
-#include <stdio.h>
-
-int	main()
+/*int	main()
 {
 	char str[] = "ciao sono luca";
 	t_list *i = ft_lstnew(str);
 	printf("%s\n", (char *)i->content);
+	free(i);
 	return (0);
-}
-*/
+}*/

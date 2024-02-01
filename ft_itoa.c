@@ -61,6 +61,16 @@ char	*ft_itoa(int n)
 #include <stdio.h>
 int main()
 {
-	int n = -2147483648;
-	printf("%s\n", ft_itoa(n));
+    int n = -2147483648;
+    char *result = ft_itoa(n);
+    
+    if (result) {
+        printf("%s\n", result);
+        free(result);  // Deallocazione della memoria dopo l'uso
+    } else {
+        fprintf(stderr, "Errore durante l'allocazione di memoria.\n");
+        return 1;
+    }
+
+    return 0;
 }*/

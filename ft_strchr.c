@@ -21,3 +21,18 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)s);
 }
+/* int main()
+{
+	const char str[] = "Hello, World!";
+	int character_to_find = 'o';
+
+	char *result = ft_strchr(str, character_to_find);
+
+	if (result) {
+		printf("Carattere trovato: %s\n", result);
+	} else {
+		printf("Carattere non trovato.\n");
+	}
+
+	return 0;
+} */

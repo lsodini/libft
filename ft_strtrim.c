@@ -30,13 +30,14 @@ char	*ft_strtrim(const char *s1, const char *set)
 	ft_strlcpy(str, (char *)s1 + inizio, fine - inizio + 2);
 	return (str);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {
 	const char s1[]="ciao mondo";
 	const char set[]="c""o";
-	printf("%s\n", ft_strtrim(s1, set));
+	char *result = ft_strtrim(s1, set);
+	printf("%s\n", result);
+	free(result);
 	return(0);
 }*/
