@@ -15,19 +15,19 @@
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*str;
-	size_t	inizio;
-	size_t	fine;
+	size_t	start;
+	size_t	end;
 
-	inizio = 0;
-	fine = ft_strlen(s1);
-	while (ft_strchr(set, (int) s1[inizio]) && inizio <= fine)
-		inizio++;
-	while (ft_strchr(set, (int) s1[fine]) && inizio < fine)
-		fine--;
-	str = ft_calloc(fine - inizio + 2, sizeof(char));
+	start = 0;
+	end = ft_strlen(s1);
+	while (ft_strchr(set, (int) s1[start]) && start <= end)
+		start++;
+	while (ft_strchr(set, (int) s1[end]) && start < end)
+		end--;
+	str = ft_calloc(end - start + 2, sizeof(char));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, (char *)s1 + inizio, fine - inizio + 2);
+	ft_strlcpy(str, (char *)s1 + start, end - start + 2);
 	return (str);
 }
 /*#include <stdio.h>
